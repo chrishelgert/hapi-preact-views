@@ -1,5 +1,7 @@
 # Hapi-preact-views
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chrishelgert/hapi-preact-views.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/hapi-preact-views.svg)](https://badge.fury.io/js/hapi-preact-views)
 [![Build Status](https://travis-ci.org/chrishelgert/hapi-preact-views.svg?branch=master)](https://travis-ci.org/chrishelgert/hapi-preact-views)
 [![codecov](https://codecov.io/gh/chrishelgert/hapi-preact-views/branch/master/graph/badge.svg)](https://codecov.io/gh/chrishelgert/hapi-preact-views)
