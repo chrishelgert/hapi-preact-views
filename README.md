@@ -13,7 +13,7 @@ See [examples](./example)
 ## Options
 
 * layout - preact-component for a global layout
-* cache - no require-cache for layout + view (default: true)
+* cache - require-cache for layout + view (default: true)
 * beforeRender - function, that should be called before rendering the views (useful for css-in-modules)
 
 ## Contributing
