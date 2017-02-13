@@ -1,7 +1,7 @@
 {
   "name": "hapi-preact-views",
   "description": "Preact-View-Engine for hapi.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
@@ -47,6 +47,8 @@
     "preact-render-to-string": "^3.5.0"
   },
   "jest": {
-    "collectCoverageFrom": ["lib/**/*.js"]
+    "collectCoverageFrom": [
+      "lib/**/*.js"
+    ]
   }
 }
