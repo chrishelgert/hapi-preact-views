@@ -50,5 +50,11 @@
     "collectCoverageFrom": [
       "lib/**/*.js"
     ]
+  },
+  "greenkeeper": {
+    "ignore": [
+      "eslint",
+      "eslint-plugin-import"
+    ]
   }
 }
