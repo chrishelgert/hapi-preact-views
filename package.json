@@ -1,7 +1,7 @@
 {
   "name": "hapi-preact-views",
   "description": "Preact-View-Engine for hapi.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
