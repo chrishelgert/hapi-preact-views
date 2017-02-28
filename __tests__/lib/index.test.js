@@ -60,7 +60,8 @@ describe('hapi-preact-views', () => {
 
     describe('with layout', () => {
       it('should render the view in the layout', (done) => {
-        createServer(layoutConfig).then(() => {
+        const config = Object.assign(layoutConfig, { cache: true })
+        createServer(config).then(() => {
           server.render('View', context, (err, output) => {
             expect(err).toBeNull()
             expect(output).toMatchSnapshot()
