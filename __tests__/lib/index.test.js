@@ -15,11 +15,11 @@ describe('hapi-preact-views', () => {
     const context = { name: 'Test' }
     const layoutConfig = {
       layoutPath: path.join(__dirname, '..', '..', 'example', 'layouts'),
-      layout: 'Default',
+      layout: 'Default'
     }
     let server
 
-    function createServer(compileOptions = {}) {
+    function createServer (compileOptions = {}) {
       return new Promise((resolve) => {
         server = new Hapi.Server()
         server.register(vision, () => {
@@ -27,7 +27,7 @@ describe('hapi-preact-views', () => {
             engines: { js: hapiPreactViews },
             relativeTo: path.resolve(__dirname, '..', '..', 'example'),
             path: 'views',
-            compileOptions,
+            compileOptions
           })
 
           resolve()

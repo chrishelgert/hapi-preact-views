@@ -17,8 +17,8 @@ server.register(vision, (err) => {
     path: 'views',
     compileOptions: {
       layoutPath: path.join(__dirname, 'layouts'),
-      layout: 'Default',
-    },
+      layout: 'Default'
+    }
   })
 
   server.start(() => {
@@ -27,7 +27,7 @@ server.register(vision, (err) => {
       path: '/{name?}',
       handler: (req, reply) => {
         reply.view('View', { name: req.params.name })
-      },
+      }
     })
   })
 })

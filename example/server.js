@@ -13,7 +13,7 @@ server.register(vision, (err) => {
   server.views({
     engines: { js: hapiPreactViews },
     relativeTo: __dirname,
-    path: 'views',
+    path: 'views'
   })
 
   server.start(() => {
@@ -22,7 +22,7 @@ server.register(vision, (err) => {
       path: '/{name?}',
       handler: (req, reply) => {
         reply.view('View', { name: req.params.name })
-      },
+      }
     })
   })
 })

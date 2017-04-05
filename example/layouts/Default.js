@@ -1,12 +1,13 @@
+/** @jsx h */
 import { h } from 'preact'
 
 const Default = ({ children }) => (
-  <html lang="en">
+  <html lang='en'>
     <head>
-      <meta name="viewport" content="with=device-with; initial-scale=1.0" />
+      <meta name='viewport' content='with=device-with; initial-scale=1.0' />
     </head>
     <body>
-      <section id="default-layout">
+      <section id='default-layout'>
         {children}
       </section>
     </body>

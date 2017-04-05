@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/chrishelgert/hapi-preact-views.svg?branch=master)](https://travis-ci.org/chrishelgert/hapi-preact-views)
 [![Build status](https://ci.appveyor.com/api/projects/status/c5qo9wa0n4uwakfj/branch/master?svg=true)](https://ci.appveyor.com/project/chrishelgert/hapi-preact-views/branch/master)
 [![codecov](https://codecov.io/gh/chrishelgert/hapi-preact-views/branch/master/graph/badge.svg)](https://codecov.io/gh/chrishelgert/hapi-preact-views)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Greenkeeper badge](https://badges.greenkeeper.io/chrishelgert/hapi-preact-views.svg)](https://greenkeeper.io/)
 
 > hapi-preact-views: [Preact](https://github.com/developit/preact/) as view-engine in [hapi.js](https://github.com/hapijs/hapi)
