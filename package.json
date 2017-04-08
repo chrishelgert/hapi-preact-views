@@ -37,8 +37,8 @@
     "husky": "^0.13.3",
     "jest": "^19.0.2",
     "preact": "^7.2.1",
-    "snazzy": "^6.0.0",
-    "standard": "^10.0.0",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.1",
     "vision": "^4.1.1"
   },
   "dependencies": {
