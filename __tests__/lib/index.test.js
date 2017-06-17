@@ -7,7 +7,7 @@ const decache = require('decache')
 const hapiPreactViews = require('../../lib/index')
 
 describe('hapi-preact-views', () => {
-  it('should return a compile-functions', () => {
+  test('returns a compile function', () => {
     expect(hapiPreactViews.compile).toBeInstanceOf(Function)
   })
 
@@ -17,11 +17,10 @@ describe('hapi-preact-views', () => {
       layoutPath: path.join(__dirname, '..', '..', 'example', 'layouts'),
       layout: 'Default'
     }
-    let server
 
     function createServer (compileOptions = {}) {
       return new Promise((resolve) => {
-        server = new Hapi.Server()
+        const server = new Hapi.Server()
         server.register(vision, () => {
           server.views({
             engines: { js: hapiPreactViews },
@@ -30,25 +29,29 @@ describe('hapi-preact-views', () => {
             compileOptions
           })
 
-          resolve()
+          resolve(server)
         })
       })
     }
 
-    describe('without layout', () => {
-      it('should return the view', (done) => {
-        createServer().then(() => {
-          server.render('View', context, (err, output) => {
-            expect(err).toBeNull()
-            expect(output).toMatchSnapshot()
+    function renderView (server, done) {
+      server.render('View', context, (err, output) => {
+        expect(err).toBeNull()
+        expect(output).toMatchSnapshot()
 
-            done()
-          })
+        done()
+      })
+    }
+
+    describe('without layout', () => {
+      test('returns the view', (done) => {
+        createServer().then((server) => {
+          renderView(server, done)
         })
       })
 
-      it('should clear the cache, when option.cache is false', (done) => {
-        createServer({ cache: false }).then(() => {
+      test('clears the cache, when option.cache is false', (done) => {
+        createServer({ cache: false }).then((server) => {
           server.render('View', context, () => {
             expect(decache).toHaveBeenCalled()
 
@@ -59,21 +62,16 @@ describe('hapi-preact-views', () => {
     })
 
     describe('with layout', () => {
-      it('should render the view in the layout', (done) => {
+      test('renders the view in the layout', (done) => {
         const config = Object.assign(layoutConfig, { cache: true })
-        createServer(config).then(() => {
-          server.render('View', context, (err, output) => {
-            expect(err).toBeNull()
-            expect(output).toMatchSnapshot()
-
-            done()
-          })
+        createServer(config).then((server) => {
+          renderView(server, done)
         })
       })
 
-      it('should clear the cache, when option.cache is false', (done) => {
+      test('clears the cache, when option.cache is false', (done) => {
         const config = Object.assign(layoutConfig, { cache: false })
-        createServer(config).then(() => {
+        createServer(config).then((server) => {
           server.render('View', context, () => {
             expect(decache).toHaveBeenCalled()
 
@@ -83,9 +81,9 @@ describe('hapi-preact-views', () => {
       })
     })
 
-    it('should call beforeRender, when it is in options', (done) => {
+    test('calls beforeRender, when it is in options', (done) => {
       const beforeRender = jest.fn()
-      createServer({ beforeRender }).then(() => {
+      createServer({ beforeRender }).then((server) => {
         server.render('View', context, () => {
           expect(beforeRender).toHaveBeenCalled()
 

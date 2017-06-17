@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`hapi-preact-views compile with layout should render the view in the layout 1`] = `"<!DOCTYPE html><html lang=\\"en\\"><head><meta name=\\"viewport\\" content=\\"with=device-with; initial-scale=1.0\\" /></head><body><section id=\\"default-layout\\"><h1>Hello Test</h1></section></body></html>"`;
+exports[`hapi-preact-views compile with layout renders the view in the layout 1`] = `"<!DOCTYPE html><html lang=\\"en\\"><head><meta name=\\"viewport\\" content=\\"with=device-with; initial-scale=1.0\\" /></head><body><section id=\\"default-layout\\"><h1>Hello Test</h1></section></body></html>"`;
 
-exports[`hapi-preact-views compile without layout should return the view 1`] = `"<!DOCTYPE html><h1>Hello Test</h1>"`;
+exports[`hapi-preact-views compile without layout returns the view 1`] = `"<!DOCTYPE html><h1>Hello Test</h1>"`;
