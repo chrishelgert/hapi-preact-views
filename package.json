@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "decache": "^4.1.0",
-    "preact-render-to-string": "^3.6.3"
+    "preact-render-to-string": "^3.7.0"
   },
   "jest": {
     "collectCoverageFrom": [
