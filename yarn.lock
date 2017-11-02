@@ -949,9 +949,9 @@ debug@^2.1.1, debug@^2.2.0, debug@^2.6.3, debug@^2.6.8:
   dependencies:
     ms "2.0.0"
 
-decache@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/decache/-/decache-4.1.0.tgz#2037d5edf756dda230c85023659e7c3d1d6e0105"
+decache@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/decache/-/decache-4.2.0.tgz#3a7543a58a7d422a14f0c5bfbd55b52bf19d7e87"
   dependencies:
     callsite "^1.0.0"
 
@@ -2850,9 +2850,9 @@ preact-render-to-string@^3.7.0:
   dependencies:
     pretty-format "^3.5.1"
 
-preact@^8.2.5:
-  version "8.2.5"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-8.2.5.tgz#cbfa3962a8012768159f6d01d46f9c1eb3213c0a"
+preact@^8.2.6:
+  version "8.2.6"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-8.2.6.tgz#0028b426ef98fcca741a3c617ff5b813b9a947c7"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
