@@ -19,77 +19,66 @@ describe('hapi-preact-views', () => {
     }
 
     function createServer (compileOptions = {}) {
-      return new Promise((resolve) => {
-        const server = new Hapi.Server()
-        server.register(vision, () => {
-          server.views({
-            engines: { js: hapiPreactViews },
-            relativeTo: path.resolve(__dirname, '..', '..', 'example'),
-            path: 'views',
-            compileOptions
-          })
+      return new Promise(async (resolve) => {
+        const server = new Hapi.Server({ port: '9999' })
+        await server.register({ plugin: vision })
 
-          resolve(server)
+        server.views({
+          engines: { js: hapiPreactViews },
+          relativeTo: path.resolve(__dirname, '..', '..', 'example'),
+          path: 'views',
+          compileOptions
         })
+
+        resolve(server)
       })
     }
 
-    function renderView (server, done) {
-      server.render('View', context, (err, output) => {
-        expect(err).toBeNull()
+    async function renderView (server) {
+      try {
+        const output = await server.render('View', context)
         expect(output).toMatchSnapshot()
-
-        done()
-      })
+      } catch (err) {
+        expect(err).toBeNull()
+      }
     }
 
     describe('without layout', () => {
-      test('returns the view', (done) => {
-        createServer().then((server) => {
-          renderView(server, done)
-        })
+      test('returns the view', async () => {
+        const server = await createServer()
+        await renderView(server)
       })
 
-      test('clears the cache, when option.cache is false', (done) => {
-        createServer({ cache: false }).then((server) => {
-          server.render('View', context, () => {
-            expect(decache).toHaveBeenCalled()
+      test('clears the cache, when option.cache is false', async () => {
+        const server = await createServer({ cache: false })
+        await server.render('View', context)
 
-            done()
-          })
-        })
+        expect(decache).toHaveBeenCalled()
       })
     })
 
     describe('with layout', () => {
-      test('renders the view in the layout', (done) => {
+      test('renders the view in the layout', async () => {
         const config = Object.assign(layoutConfig, { cache: true })
-        createServer(config).then((server) => {
-          renderView(server, done)
-        })
+        const server = await createServer(config)
+        await renderView(server)
       })
 
-      test('clears the cache, when option.cache is false', (done) => {
+      test('clears the cache, when option.cache is false', async () => {
         const config = Object.assign(layoutConfig, { cache: false })
-        createServer(config).then((server) => {
-          server.render('View', context, () => {
-            expect(decache).toHaveBeenCalled()
+        const server = await createServer(config)
+        await server.render('View', context)
 
-            done()
-          })
-        })
+        expect(decache).toHaveBeenCalled()
       })
     })
 
-    test('calls beforeRender, when it is in options', (done) => {
+    test('calls beforeRender, when it is in options', async () => {
       const beforeRender = jest.fn()
-      createServer({ beforeRender }).then((server) => {
-        server.render('View', context, () => {
-          expect(beforeRender).toHaveBeenCalled()
+      const server = await createServer({ beforeRender })
+      await server.render('View', context)
 
-          done()
-        })
-      })
+      expect(beforeRender).toHaveBeenCalled()
     })
   })
 })
