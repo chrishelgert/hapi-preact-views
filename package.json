@@ -37,7 +37,7 @@
     "jest": "^21.2.1",
     "preact": "^8.2.6",
     "snazzy": "^7.0.0",
-    "standard": "^10.0.3",
+    "standard": "^11.0.0",
     "vision": "^5.2.0"
   },
   "dependencies": {
