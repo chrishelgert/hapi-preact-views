@@ -2843,11 +2843,12 @@ podium@3.x.x:
     hoek "5.x.x"
     joi "13.x.x"
 
-preact-render-to-string@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-3.7.0.tgz#7db4177454bc01395e0d01d6ac07bc5e838e31ee"
+preact-render-to-string@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.0.0.tgz#6eec079b4777d863e6e82f7b2d4accfc68733c1b"
+  integrity sha512-PVUcXpXskGL0vbKk6eiQZGG/6qMHunemARRmIU9t56/PehXbxzoVbTBdDgcTFcTyzewU0ZOhBTdonOUPGy4+PA==
   dependencies:
-    pretty-format "^3.5.1"
+    pretty-format "^3.8.0"
 
 preact@^8.2.6:
   version "8.2.6"
@@ -2868,9 +2869,10 @@ pretty-format@^21.2.1:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-pretty-format@^3.5.1:
+pretty-format@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-3.8.0.tgz#bfbed56d5e9a776645f4b1ff7aa1a3ac4fa3c385"
+  integrity sha1-v77VbV6ad2ZF9LH/eqGjrE+jw4U=
 
 private@^0.1.6, private@^0.1.7:
   version "0.1.7"
