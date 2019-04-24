@@ -33,7 +33,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
     "hapi": "^17.0.2",
-    "husky": "^0.14.3",
+    "husky": "^2.1.0",
     "jest": "^21.2.1",
     "preact": "^8.2.6",
     "snazzy": "^7.0.0",
